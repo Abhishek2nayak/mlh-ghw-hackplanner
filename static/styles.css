@@ -1,0 +1,106 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    background-color:rgba(45, 115, 165, 0.655);
+ }
+ h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color:rgb(101, 10, 10);
+
+   }
+
+ .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+ }
+
+ .checklist-items {
+   margin-top: 10px;
+    list-style-type: none;
+    padding:30px;
+    background-color: rgba(240, 248, 255, 0.561);
+    border-radius: 5px;
+
+ }
+
+ .checklist-items li {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    
+ }
+
+ 
+ .checklist-items li a {
+    color:#ffffff;
+    padding:5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+
+ }
+ .checklist-items li .edit {
+   background-color: #29519c;
+
+ }
+ .checklist-items li .delete {
+   background-color:red;
+
+ }
+ .checklist-items li .reminder {
+   border: none;
+   border-radius: 5px;
+   padding: 5px 10px;
+   background-color:khaki;
+
+ }
+ .add-form ,.edit-form {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 30px;
+ }
+ .add-form input[type="text"],
+  .edit-form input[type="text"] {
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  
+ }
+ .add-form button , .edit-form button {
+    background-color: #29519c;
+    width: 10%;
+    padding: 10px;
+    
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+
+
+ .add-form button:hover , .edit-form button:hover {
+    background-color: #032462;
+
+ }
+
+ .add-form input[type="text"]:focus,
+ .edit-form input[type="text"]:focus {
+    outline: none;
+    border-color: green;
+    
+ }
