@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hack Planner App</title>
+
+    <!-- links  -->
+   <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')  }}" >
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Hack Planner App</h1>
-    <ul>
-       {% for item in items %}
-       <li>
-        {{item}}
-        <a href="/edit/{{loop.index}}">Edit</a>
-        <a href="/delete/{{loop.index}}">Delete</a>
-       </li>
-       {% endfor %}
-    </ul>
-    <form action="/add" method="POST">
-        <input type="text" placeholder="Enter Data" name="item">
-        <button type="submit">Add</button>
-    </form>
+    <div class="container">
+        <h1>Hack Planner App</h1>
+        <form action="/add" method="POST" class="add-form">
+            <input type="text" placeholder="Enter Data" name="item">
+            <button type="submit">Add</button>
+        </form>
 
+        <ul class="checklist-items">
+            {% for item in items %}
+            <li>
+             {{item[1]}}
+             <div class="operations">
+                <a href="/edit/{{item[0]}}" class="edit"><i class="fa-solid fa-pen"></i></a>
+             <a href="/delete/{{item[0]}}" class="delete"><i class="fa-sharp fa-solid fa-trash"></i></a>
+             <button class="reminder" onclick="setReminder('{{item[1]}}')"> <i class="fa-solid fa-bell"></i></button>    
+             </div>
+             
+            </li>
+            {% endfor %}
+         </ul>
+    </div>
+   
+    <script>
+        function setReminder(item) {
+            setTimeout(function() {
+                var reminder = confirm("Reminder : "+item);
+            },5 * 1000)
+        }
+    </script>
 </body>
 </html>
